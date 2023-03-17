@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
 :root{
     --background-color: #060b19;
-    --border-color : #f9f9f6;
+    --border-color : rgb(249, 249, 246, 0.2);
 }
-
+*{
+    box-sizing: border-box;
+}
 body{
     background-color: var(--background-color);
     display: flex;
@@ -16,4 +19,107 @@ nav{
     display: flex;
     width: 100%;
     border-bottom: 1px solid var(--border-color);
+}
+
+nav > .nav-section{
+    padding: 3rem 2rem;
+    display: flex;
+    gap: 1rem;
+    border-left:1px solid var(--border-color);
+    align-items: center;
+    justify-content: center;
+}
+
+h1, h2, h3, a, p, span{
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
+
+#nav-logo-section,
+#nav-link-section{
+    flex-basis: calc(100%/3);
+}
+
+#nav-social-section,
+#nav-contact-section{
+    flex-grow: 1;
+}
+
+#nav-logo-section{
+    justify-content: flex-start;
+    border-left: none;
+}
+#nav-logo-section > a > i{
+    font-size: 2rem;
+}
+#nav-social-section {
+    gap: 3rem
+}
+
+#nav-link-section{
+    gap: 6rem;
+}
+nav > .nav-section {
+    padding: 3rem 2rem;
+}
+
+#menu {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item {
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-family: 'Signika Negative', sans-serif;
+    color: white;
+
+    display: block;
+    text-decoration: none;
+    padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+    transition: opacity 400ms ease;
+}
+body > #menu > #menu-items > a{
+    color: none;
+}
+
+#menu-items {
+    margin-left: clamp(4rem, 20vw, 48rem) ;
+    position: relative;
+    z-index: 2;
+    
+}
+
+#menu-background-pattern{
+    height: 100vh;
+    width: 100vw;
+
+    background-image: radial-gradient(
+        rgba(255, 255, 255, 0.1) 9%,
+        transparent 9%
+    );
+    background-position: 0% 0%;
+    background-size: 12vmin 12vmin;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+
+    transition: opacity 800ms ease,
+    background-size 800ms ease;
+}
+#menu-items:hover > .menu-item:hover{
+    opacity: 1;
+}
+#menu-items:hover > .menu-item{
+    opacity: 0.3;
+}
+#menu-items:hover ~ #menu-background-pattern{
+    background-size: 11vmin 11vmin;
+    opacity: 0.5;
 }
