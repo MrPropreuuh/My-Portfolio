@@ -1,18 +1,8 @@
-const menuBtn = document.querySelector('.menu-btn');
-const menu = document.querySelector('.menu');
+const menu = document.getElementById("menu");
 
-let showMenu = false;
-
-menuBtn.addEventListener('click', toggleMenu);
-
-function toggleMenu(e) {
-  e.preventDefault();
-  if (!showMenu) {
-    menu.classList.add('show');
-    showMenu = true;
-  } else {
-    menu.classList.remove('show');
-    showMenu = false;
-  }
-}
-
+Array.from(document.getElementByClassName("menu-item"))
+    .forEach((item, index) => {
+        item.onmouseover = () => {
+            menu.dataset.activeIndex = index;
+        }
+    });
