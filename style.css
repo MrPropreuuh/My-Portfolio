@@ -278,7 +278,7 @@ transition: opacity 800ms ease,
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #0e0e0e;
+    background: #100f0d;
     transform: translateY(calc(-100px - 50%)) translateX(calc(50px - 50%));
     z-index: 1;
     transition: 0.5s ease-in-out;
