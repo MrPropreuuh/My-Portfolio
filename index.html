@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
+
 <body>
     <!-- navbar -->
+
+    <!-- <div id="menu">
+        <div id="menu-items">
+          <a href="/" class="menu-item">Acceuil</a>
+          <a href="/" class="menu-item">Projet</a>
+          <a href="/" class="menu-item">A propos de moi</a>
+          <a href="/" class="menu-item">Contact</a>
+        </div>
+        <div id="menu-background-pattern"></div>
+        <div id="menu-background-image"></div>
+      </div> -->
+
+
     <nav>
         <div id="nav-logo-section" class="nav-section">
-            <a href="navbar.html" class="menu-btn"><i class="fa fa-bars"></i></a>
+            <a href="#" class="menu-btn">Portfolio </a>
         </div>
-        
+
 
         <div id="nav-link-section" class="nav-section">
-            <a href="#">ACCEUIL</a>
-            <a href="#">A PROPOS DE MOI</a>
-            <a href="#">PROJETS</a>
-            
-        </div>
-        <div id="nav-social-section" class="nav-section">
-            <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
-            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+
         </div>
         <div id="nav-contact-section" class="nav-section">
-            <a href="#">CONTACTEZ-MOI</a>
+            <a href="#home" class="active">ACCEUIL</a>
+            <a href="#about">A PROPOS DE MOI</a>
+            <a href="#services">PROJETS</a>
+            <a href="#portfolio">COMPÉTENCES</a>
+            <a href="#contact">CONTACTEZ-MOI</a>
         </div>
     </nav>
 
@@ -36,15 +51,16 @@
 
     <section class="home" id="home">
         <div class="home-content">
-          <h3>Salut, c'est moi</h3>
-          <h1>Vincent Fougère</h1>
-          <h3>Et je suis un <span>Étudiant</span></h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis sem in lacus placerat venenatis eget id
-            libero.</p>
+            <h3>Salut, c'est moi</h3>
+            <h1>Vincent Fougère</h1>
+            <h3>Et je suis un <span>Étudiant</span></h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis sem in lacus placerat venenatis eget
+                id
+                libero.</p>
             <div class="container">
                 <div class="bar"></div>
                 <div class="button-container">
-                    <div class="button" style="--color: #f05153">
+                    <div class="button" style="--color: #00FF7F">
                         <div class="dot"></div>
                         <div class="light"></div>
                         <button>
@@ -52,7 +68,7 @@
                             <span class="social-neon">LinkedIn</span>
                         </button>
                     </div>
-                    <div class="button" style="--color: #f08324">
+                    <div class="button" style="--color: #00FF7F">
                         <div class="dot"></div>
                         <div class="light"></div>
                         <button>
@@ -60,7 +76,7 @@
                             <span class="social-neon">Discord</span>
                         </button>
                     </div>
-                    <div class="button" style="--color: #ebcd1d">
+                    <div class="button" style="--color: #00FF7F">
                         <div class="dot"></div>
                         <div class="light"></div>
                         <button>
@@ -68,20 +84,162 @@
                             <span class="social-neon">Facebook</span>
                         </button>
                     </div>
+
                 </div>
+
+            </div>
+
+            <a href="#" class="btn">Télécharger le CV</a>
+
+        </div>
+
+        <div class="home-img">
+            <img src="images/boxed-water-is-better-Tu1AchSx2Hc-unsplash.jpg" alt="">
+        </div>
+
+    </section>
+
+    <!-- about section -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="images/boxed-water-is-better-Tu1AchSx2Hc-unsplash.jpg" alt="">
+        </div>
+        <div class="about-content">
+            <h2 class="heading">A propos de <span>Moi</span></h2>
+            <h3>Étudiant à l'EPSI</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum ullam eius eveniet impedit? Tempora,
+                laudantium eos. Unde modi inventore voluptatum error magni nisi iure perferendis, quae debitis sapiente
+                sequi repellendus delectus in adipisci. Dolores alias quasi nostrum inventore, totam, aspernatur
+                delectus, ex mollitia sit ad officiis.</p>
+            <a href="#" class="btn">Lire plus</a>
+        </div>
+    </section>
+
+    <!-- services section design  -->
+    <section class="services" id="services">
+        <h2 class="heading">Mes <span>Projets</span></h2>
+
+        <div class="services-container">
+            <div class="services-box">
+                <i class="fa-solid fa-code"></i>
+                <h3>Projet 1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ab suscipit, pariatur quos
+                    excepturi commodi velit magnam hic illum assumenda expedita quod placeat esse maxime ut ex
+                    nesciunt quibusdam? Ipsum, ipsam illo.</p>
+                <a href="#" class="btn">En Savoir Plus</a>
+            </div>
+
+            <div class="services-box">
+                <i class="fa-solid fa-code"></i>
+                <h3>Projet 2</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ab suscipit, pariatur quos
+                    excepturi commodi velit magnam hic illum assumenda expedita quod placeat esse maxime ut ex
+                    nesciunt quibusdam? Ipsum, ipsam illo.</p>
+                <a href="#" class="btn">En Savoir Plus</a>
+            </div>
+
+            <div class="services-box">
+                <i class="fa-solid fa-code"></i>
+                <h3>Projet 3</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ab suscipit, pariatur quos
+                    excepturi commodi velit magnam hic illum assumenda expedita quod placeat esse maxime ut ex
+                    nesciunt quibusdam? Ipsum, ipsam illo.</p>
+                <a href="#" class="btn">En Savoir Plus</a>
+            </div>
+            <div class="services-box">
+                <i class="fa-solid fa-code"></i>
+                <h3>Projet 4</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ab suscipit, pariatur quos
+                    excepturi commodi velit magnam hic illum assumenda expedita quod placeat esse maxime ut ex
+                    nesciunt quibusdam? Ipsum, ipsam illo.</p>
+                <a href="#" class="btn">En Savoir Plus</a>
             </div>
         </div>
+    </section>
+
+    <!-- Portfolio section design  -->
+
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Mes <span>Compétences</span></h2>
+
+        <ul>
+            <li style="--color: #FF5722">
+                <span class="base"></span>
+                <span class="title">HTML5</span>
+                <span class="icon">
+                    <i class="fa-brands fa-html5 rotate"></i>
+                </span>
+                
+                <span class="number">90</span>
+            </li>
+            <li style="--color: #2196F3">
+                <span class="base"></span>
+                <span class="title">CSS3</span>
+                <span class="icon">
+                    <i class="fa-brands fa-css3-alt rotate"></i>
+                </span>
+                <span class="number">90</span>
+            </li>
+            <li style="--color: #FFC107">
+                <span class="base"></span>
+                <span class="title">Javascript</span>
+                <span class="icon">
+                    <i class="fa-brands fa-square-js rotate"></i>
+                </span>
+                <span class="number">53</span>
+            </li>
+            <li style="--color: #9C27B0">
+                <span class="base"></span>
+                <span class="title">PHP</span>
+                <span class="icon">
+                    <i class="fa-brands fa-php"></i>
+                </span>
+                <span class="number">65</span>
+            </li>
+            <li style="--color: #03A9F4">
+                <span class="base"></span>
+                <span class="title">MySQL</span>
+                <span class="icon">
+                    <i class="fa-solid fa-database"></i>
+                </span>
+                <span class="number">62</span>
+            </li>
+        </ul>
+    </section>
+
+
+    <!-- contact section  -->
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contactez <span>Moi!</span></h2>
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="Nom Complet">
+                <input type="email" placeholder="Email">
+            </div>
+            <div class="input-box">
+                <input type="number" placeholder="Mobile Number">
+                <input type="text" placeholder="Objet du courriel">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Votre Message"></textarea>
+            <input type="submit" value="Envoyer" class="btn">
+        </form>
+    </section>
+
+    <!-- footer  -->
+<footer class="footer">
+    <div class="footer-text">
+        <p>Droits d'auteur &copy; 2023 par Vincent Fougère | Tous droits réservés.</p>
+    </div>
     
-        <div class="home-img">
-          <img src="images/boxed-water-is-better-Tu1AchSx2Hc-unsplash.jpg" alt="">
-        </div>
-      </section>
-
-<footer>
-
-
+    <div class="footer-iconTop">
+        <a href="#home">
+            <i class="fa-sharp fa-solid fa-arrow-up"></i>
+        </a>
+    </div>
 </footer>
 
     <script src="js.js"></script>
 </body>
+
 </html>
