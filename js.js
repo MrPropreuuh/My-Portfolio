@@ -29,7 +29,14 @@ lis.forEach((li, index) => {
     }
   }, 15);
 });
+// toggle icon navbar 
+let menuIcon = document.querySelector('#menu-icon')
+let navbar = document.querySelector('#nav-contact-section')
 
+menuIcon.onclick = () => {
+  menuIcon.classList.toggle('fa-xmark')
+  navbar.classList.toggle('active')
+};
 // scroll sections active link 
 
 let sections = document.querySelectorAll('section');
@@ -53,7 +60,33 @@ window.onscroll = () => {
   let nav = document.querySelector('nav');
 
   nav.classList.toggle('sticky', window.scrollY > 100);
+
+  // Enleve la navbar quand ont click sur un lien 
+  menuIcon.classList.remove('fa-xmark')
+  navbar.classList.remove('active')
 };
 
 
 
+// scroll reaveal animation 
+ScrollReveal({
+  
+  distance: '80px',
+  duration: 1700,
+  delay: 200
+});
+
+ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+ScrollReveal().reveal('.home-img, .services-container, .contact form', { origin: 'bottom' });
+ScrollReveal().reveal('.home-content h1, .about-img, ul', { origin: 'left' });
+ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
+
+
+// typed js 
+const typed = new Typed('.multiple-text', {
+  strings: ['Étudiant', 'Développeur', 'Technophile'],
+  typeSpeed: 50,
+  backSpeed: 100,
+  backdelay: 1500,
+  loop: true
+});
