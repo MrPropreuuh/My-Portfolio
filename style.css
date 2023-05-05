@@ -713,7 +713,12 @@ li .icon{
     margin: .7rem 0;
     border: none;
 }
-
+input:focus, textarea:focus {
+    outline: none; /* Supprime l'outline par défaut */
+  /* Ajoutez ici les styles personnalisés pour l'effet "active" */
+  border: 2px solid var(--main-color); /* Par exemple, une bordure bleue */
+  box-shadow: 0 0 5px var(--main-color); /* Un effet d'ombre */
+}
 .contact form .input-box input {
     width: 49%;
 
