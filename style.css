@@ -530,6 +530,7 @@ transition: opacity 800ms ease,
 .services-box i{
     font-size: 5rem;
     color: var(--main-color);
+    
 }
 .services-box  h3 {
     font-size: 2.4rem;
@@ -766,6 +767,77 @@ input:focus, textarea:focus {
     font-size: 1.6rem;
     color: var(--second-background-color);
 }
+
+
+/* animation class css  */
+.container .services-box{
+    transition: background-color 10s ease-in-out;
+}
+
+.animation-services-box1 {
+    background-color: red !important;
+    align-self: stretch;
+
+  }
+    
+  .animation-services-box2 {
+    background-color: blue !important;
+  }
+  
+  .animation-services-box3 {
+    
+    background-color: green !important;
+  }
+  
+  .animation-services-box4 {
+    
+    background-color: yellow !important;
+  }
+  
+  .animation-services-box5 {
+    background-color: purple !important;
+  }
+  
+  .animation-services-box6 {
+    background-color: orange !important;
+  }
+  
+  .animation-services-box7 {
+    background-color: pink !important;
+  }
+  
+  .animation-services-box8 {
+    background-color: teal !important;
+  }
+  
+  .animation-services-box9 {
+    background-color: brown !important;
+  }
+  
+  .animation-services-box10 {
+    background-color: cyan !important;
+  }
+  
+  .animation-services-box11 {
+    background-color: magenta !important;
+  }
+  
+  .animation-services-box12 {
+    background-color: gray !important;
+  }
+  
+  .animation-services-box13 {
+    background-color: silver !important;
+  }
+  
+  .animation-services-box14 {
+    background-color: gold !important;
+  }
+  
+  .animation-services-box15 {
+    background-color: lime !important;
+  }
+  
 
 /* BREAKPOINT Responsive  */
 

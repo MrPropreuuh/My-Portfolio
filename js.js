@@ -90,3 +90,107 @@ const typed = new Typed('.multiple-text', {
   backdelay: 1500,
   loop: true
 });
+
+
+// Sélectionnez toutes les cartes
+const cards = document.querySelectorAll('.services-box');
+
+// Ajoutez un écouteur d'événement à chaque carte
+cards.forEach(function(card) {
+  card.addEventListener('click', function(event) {
+    // Récupérez l'ID de la carte cliquée
+    const clickedCardId = card.getAttribute('id');
+
+    // Supprimez toutes les classes d'animation des cartes
+    cards.forEach(function(card) {
+      card.classList.remove(
+        'animation-services-box1',
+        'animation-services-box2',
+        'animation-services-box3',
+        'animation-services-box4',
+        'animation-services-box5',
+        'animation-services-box6',
+        'animation-services-box7',
+        'animation-services-box8',
+        'animation-services-box9',
+        'animation-services-box10',
+        'animation-services-box11',
+        'animation-services-box12',
+        'animation-services-box13',
+        'animation-services-box14',
+        'animation-services-box15'
+      );
+    });
+
+    // Effectuez les actions en fonction de l'ID de la carte cliquée
+    switch (clickedCardId) {
+      case '1':
+        // Ajoutez les classes d'animation à la carte 1
+        card.classList.add('animation-services-box1');
+        document.getElementById('2').classList.add('animation-services-box2');
+        document.getElementById('3').classList.add('animation-services-box3');
+        document.getElementById('4').classList.add('animation-services-box4');
+        break;
+
+      case '2':
+        // Ajoutez les classes d'animation à la carte 2
+        card.classList.add('animation-services-box5');
+        document.getElementById('1').classList.add('animation-services-box6');
+        document.getElementById('3').classList.add('animation-services-box7');
+        document.getElementById('4').classList.add('animation-services-box8');
+        break;
+
+      case '3':
+        // Ajoutez les classes d'animation à la carte 3
+        card.classList.add('animation-services-box9');
+        document.getElementById('1').classList.add('animation-services-box10');
+        document.getElementById('2').classList.add('animation-services-box11');
+        document.getElementById('4').classList.add('animation-services-box12');
+        break;
+
+      case '4':
+        // Ajoutez les classes d'animation à la carte 4
+        card.classList.add('animation-services-box13');
+        document.getElementById('1').classList.add('animation-services-box14');
+        document.getElementById('2').classList.add('animation-services-box15');
+        document.getElementById('3').classList.add('animation-services-box15');
+        break;
+
+      default:
+        break;
+    }
+
+    event.stopPropagation(); // Arrêtez la propagation de l'événement pour éviter de déclencher l'écouteur d'événement du document
+  });
+});
+
+// Ajoutez un écouteur d'événement au document pour supprimer les classes d'animation lorsque vous cliquez en dehors des cartes
+document.addEventListener('click', function(event) {
+  const clickedElement = event.target;
+  const isInsideCard = clickedElement.closest('.services-box');
+  
+  // Si vous cliquez à l'extérieur des cartes
+  if (!isInsideCard) {
+    // Supprimez toutes les classes d'animation des cartes
+    cards.forEach(function(card) {
+      card.classList.remove(
+        'animation-services-box1',
+        'animation-services-box2',
+        'animation-services-box3',
+        'animation-services-box4',
+        'animation-services-box5',
+        'animation-services-box6',
+        'animation-services-box7',
+        'animation-services-box8',
+        'animation-services-box9',
+        'animation-services-box10',
+        'animation-services-box11',
+        'animation-services-box12',
+        'animation-services-box13',
+        'animation-services-box14',
+        'animation-services-box15'
+      );
+    });
+  }
+});
+
