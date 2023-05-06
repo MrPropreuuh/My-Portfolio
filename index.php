@@ -195,6 +195,33 @@
     </section>
 
 
+    <?php
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // Récupérer les données du formulaire
+    $nom = $_POST['nom'];
+    $email = $_POST['email'];
+    $numero = $_POST['numero'];
+    $objet = $_POST['objet'];
+    $message = $_POST['message'];
+
+    // Construction du contenu du mail
+    $contenu = "Nom : " . $nom . "\n";
+    $contenu .= "Email : " . $email . "\n";
+    $contenu .= "Numéro de téléphone : " . $numero . "\n\n";
+    $contenu .= "Message : \n" . $message;
+
+    // En-têtes du mail
+    $headers = "From: " . $email . "\r\n";
+    $headers .= "Reply-To: " . $email . "\r\n";
+
+    // Envoyer l'e-mail
+    if(mail("vincent.fougere77@gmail.com", $objet, $contenu, $headers)){
+        echo "Votre e-mail a été envoyé avec succès.";
+    } else {
+        echo "Une erreur s'est produite lors de l'envoi de l'e-mail. Veuillez réessayer.";
+    }
+}
+?>
 
     <!-- contact section  -->
 
