@@ -197,29 +197,40 @@
 
 
     <?php
+session_start(); // Démarrer la session
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    // Récupérer les données du formulaire
-    $nom = $_POST['nom'];
+    // Récupérer l'adresse e-mail de l'expéditeur
     $email = $_POST['email'];
-    $numero = $_POST['numero'];
-    $objet = $_POST['objet'];
-    $message = $_POST['message'];
 
-    // Construction du contenu du mail
-    $contenu = "Nom : " . $nom . "\n";
-    $contenu .= "Email : " . $email . "\n";
-    $contenu .= "Numéro de téléphone : " . $numero . "\n\n";
-    $contenu .= "Message : \n" . $message;
-
-    // En-têtes du mail
-    $headers = "From: " . $email . "\r\n";
-    $headers .= "Reply-To: " . $email . "\r\n";
-
-    // Envoyer l'e-mail
-    if(mail("vincent.fougere77@gmail.com", $objet, $contenu, $headers)){
-        echo "Votre e-mail a été envoyé avec succès.";
+    // Vérifier si l'adresse e-mail a déjà été utilisée pour l'envoi
+    if(isset($_SESSION['sent_emails']) && in_array($email, $_SESSION['sent_emails'])){
+        echo "Vous avez déjà envoyé un e-mail. Veuillez attendre un certain temps avant de réessayer.";
     } else {
-        echo "Une erreur s'est produite lors de l'envoi de l'e-mail. Veuillez réessayer.";
+        // Récupérer les autres données du formulaire
+        $nom = $_POST['nom'];
+        $numero = $_POST['numero'];
+        $objet = $_POST['objet'];
+        $message = $_POST['message'];
+
+        // Construction du contenu du mail
+        $contenu = "Nom : " . $nom . "\n";
+        $contenu .= "Email : " . $email . "\n";
+        $contenu .= "Numéro de téléphone : " . $numero . "\n\n";
+        $contenu .= "Message : \n" . $message;
+
+        // En-têtes du mail
+        $headers = "From: " . $email . "\r\n";
+        $headers .= "Reply-To: " . $email . "\r\n";
+
+        // Envoyer l'e-mail
+        if(mail("vincent.fougere77@gmail.com", $objet, $contenu, $headers)){
+            // Ajouter l'adresse e-mail à la liste des e-mails envoyés dans la session
+            $_SESSION['sent_emails'][] = $email;
+            echo "Votre e-mail a été envoyé avec succès.";
+        } else {
+            echo "Une erreur s'est produite lors de l'envoi de l'e-mail. Veuillez réessayer.";
+        }
     }
 }
 ?>
@@ -265,14 +276,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <!-- hide loader -->
 <script>
-    window.addEventListener("load", function() {
-  var loader = document.querySelector(".loader-wrapp");
-  loader.style.transition = "opacity 0.5s";
-  loader.style.opacity = "0";
-  setTimeout(function() {
-    loader.style.display = "none";
-  }, 500);
-});
+    $(window).on("load", function(){
+      $(".loader-wrapp").fadeOut("slow");
+    });
 </script>
 
 <!-- scrool reveal  -->
