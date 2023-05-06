@@ -197,49 +197,32 @@
 
 
     <?php
-session_start(); // Démarrer la session
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupérer l'adresse e-mail de l'expéditeur
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // Récupérer les données du formulaire
+    $nom = $_POST['nom'];
     $email = $_POST['email'];
+    $numero = $_POST['numero'];
+    $objet = $_POST['objet'];
+    $message = $_POST['message'];
 
-    // Vérifier si l'adresse e-mail a déjà été utilisée pour l'envoi
-    if (isset($_SESSION['sent_emails']) && in_array($email, $_SESSION['sent_emails'])) {
-        $message = "Vous avez déjà envoyé un e-mail. Veuillez attendre un certain temps avant de réessayer.";
+    // Construction du contenu du mail
+    $contenu = "Nom : " . $nom . "\n";
+    $contenu .= "Email : " . $email . "\n";
+    $contenu .= "Numéro de téléphone : " . $numero . "\n\n";
+    $contenu .= "Message : \n" . $message;
+
+    // En-têtes du mail
+    $headers = "From: " . $email . "\r\n";
+    $headers .= "Reply-To: " . $email . "\r\n";
+
+    // Envoyer l'e-mail
+    if(mail("vincent.fougere77@gmail.com", $objet, $contenu, $headers)){
+        echo "Votre e-mail a été envoyé avec succès.";
     } else {
-        // Récupérer les autres données du formulaire
-        $nom = $_POST['nom'];
-        $numero = $_POST['numero'];
-        $objet = $_POST['objet'];
-        $message = $_POST['message'];
-
-        // Construction du contenu du mail
-        $contenu = "Nom : " . $nom . "\n";
-        $contenu .= "Email : " . $email . "\n";
-        $contenu .= "Numéro de téléphone : " . $numero . "\n\n";
-        $contenu .= "Message : \n" . $message;
-
-        // En-têtes du mail
-        $headers = "From: " . $email . "\r\n";
-        $headers .= "Reply-To: " . $email . "\r\n";
-
-        // Envoyer l'e-mail
-        if (mail("vincent.fougere77@gmail.com", $objet, $contenu, $headers)) {
-            // Ajouter l'adresse e-mail à la liste des e-mails envoyés dans la session
-            $_SESSION['sent_emails'][] = $email;
-            $message = "Votre e-mail a été envoyé avec succès.";
-        } else {
-            $message = "Une erreur s'est produite lors de l'envoi de l'e-mail. Veuillez réessayer.";
-        }
-
-        // Rediriger vers la page de confirmation avec le message correspondant
-        header("Location: confirmation.php?message=" . urlencode($message));
-        exit();
+        echo "Une erreur s'est produite lors de l'envoi de l'e-mail. Veuillez réessayer.";
     }
 }
 ?>
-
-
 
     <!-- contact section  -->
 
