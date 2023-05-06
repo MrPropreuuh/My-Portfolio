@@ -217,17 +217,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Envoyer l'e-mail
     if(mail("vincent.fougere77@gmail.com", $objet, $contenu, $headers)){
-        // Redirection vers la page de confirmation avec un message de confirmation
-        header("Location: confirmation.php?message=Votre%20e-mail%20a%20été%20envoyé%20avec%20succès.");
+        // Redirection vers la page de confirmation
+        header("Location: confirmation.php");
         exit();
     } else {
-        // Redirection vers la page d'erreur avec un message d'erreur
-        header("Location: erreur.php?message=Une%20erreur%20s'est%20produite%20lors%20de%20l'envoi%20de%20l'e-mail.%20Veuillez%20réessayer.");
+        // Redirection vers la page d'erreur
+        header("Location: erreur.php");
         exit();
     }
 }
 ?>
-
 
     <!-- contact section  -->
 
