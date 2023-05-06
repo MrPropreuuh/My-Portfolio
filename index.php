@@ -241,6 +241,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </form>
 </section>
 
+<!-- loader  -->
+<div class="loader-wrapp">
+<div class="loader"></div>
+</div>
 
     <!-- footer  -->
 <footer class="footer">
