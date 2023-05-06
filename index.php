@@ -197,10 +197,10 @@
 
 
     <?php
-// Appel à session_start() avant tout contenu ou en-tête
 session_start();
+ob_start(); // Activation de la mise en tampon de sortie
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer les données du formulaire
     $nom = $_POST['nom'];
     $email = $_POST['email'];
@@ -219,7 +219,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $headers .= "Reply-To: " . $email . "\r\n";
 
     // Envoyer l'e-mail
-    if(mail("vincent.fougere77@gmail.com", $objet, $contenu, $headers)){
+    if (mail("vincent.fougere77@gmail.com", $objet, $contenu, $headers)) {
         // Ajouter l'adresse e-mail à la liste des e-mails envoyés dans la session
         $_SESSION['sent_emails'][] = $email;
         $message = "Votre e-mail a été envoyé avec succès.";
@@ -232,10 +232,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         // Redirection vers la page d'erreur avec un message d'erreur
         header("Location: erreur.php?message=" . urlencode($message));
-        exit();
+    exit();
     }
-}
-?>
+    }
+    ob_end_flush(); // Envoi du contenu mis en tampon
+ ?>
+
 
     <!-- contact section  -->
 
