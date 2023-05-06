@@ -194,55 +194,13 @@
         </ul>
     </section>
 
-    <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nom = $_POST["nom"];
-    $email = $_POST["email"];
-    $numero = $_POST["numero"];
-    $objet = $_POST["objet"];
-    $message = $_POST["message"];
-
-    // Validation des données du formulaire (vous pouvez ajouter d'autres validations si nécessaire)
-
-    if (empty($nom) || empty($email) || empty($numero) || empty($objet) || empty($message)) {
-        echo "Veuillez remplir tous les champs du formulaire.";
-        exit;
-    }
-
-    // Adresse e-mail à laquelle vous souhaitez recevoir le message
-    $to = "vincent.fougere77@gmail.com";
-
-    // Sujet de l'e-mail
-    $subject = "Nouveau message de contact depuis votre site web";
-
-    // Corps de l'e-mail
-    $email_body = "Nom: " . $nom . "\n";
-    $email_body .= "Email: " . $email . "\n";
-    $email_body .= "Numéro de téléphone: " . $numero . "\n";
-    $email_body .= "Objet: " . $objet . "\n";
-    $email_body .= "Message: \n" . $message;
-
-    // En-têtes de l'e-mail
-    $headers = "From: " . $email . "\r\n";
-    $headers .= "Reply-To: " . $email . "\r\n";
-
-    // Envoyer l'e-mail
-    if (mail($to, $subject, $email_body, $headers)) {
-        echo "Votre message a été envoyé avec succès.";
-    } else {
-        echo "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer plus tard.";
-    }
-}
-?>
-
-
 
 
     <!-- contact section  -->
 
     <section class="contact" id="contact">
     <h2 class="heading">Contactez <span>Moi!</span></h2>
-    <form method="POST" action="#">
+    <form method="POST" action="index.php">
         <div class="input-box">
             <input type="text" name="nom" placeholder="Nom Complet">
             <input type="email" name="email" placeholder="Email">
