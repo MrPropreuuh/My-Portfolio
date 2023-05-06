@@ -230,30 +230,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mail($to, $subject, $email_body, $headers)) {
         echo "Votre message a été envoyé avec succès.";
     } else {
-        echo "Une erreur est survenue lors de l'envoi du message.";
+        echo "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer plus tard.";
     }
 }
 ?>
 
 
 
+
     <!-- contact section  -->
 
     <section class="contact" id="contact">
-        <h2 class="heading">Contactez <span>Moi!</span></h2>
-        <form action="#">
-            <div class="input-box">
-                <input type="text" placeholder="Nom Complet">
-                <input type="email" placeholder="Email">
-            </div>
-            <div class="input-box">
-                <input type="number" placeholder="Mobile Number">
-                <input type="text" placeholder="Objet du courriel">
-            </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Votre Message"></textarea>
-            <input type="submit" value="Envoyer" class="btn">
-        </form>
-    </section>
+    <h2 class="heading">Contactez <span>Moi!</span></h2>
+    <form method="POST" action="#">
+        <div class="input-box">
+            <input type="text" name="nom" placeholder="Nom Complet">
+            <input type="email" name="email" placeholder="Email">
+        </div>
+        <div class="input-box">
+            <input type="number" name="numero" placeholder="Mobile Number">
+            <input type="text" name="objet" placeholder="Objet du courriel">
+        </div>
+        <textarea name="message" cols="30" rows="10" placeholder="Votre Message"></textarea>
+        <input type="submit" value="Envoyer" class="btn">
+    </form>
+</section>
+
 
     <!-- footer  -->
 <footer class="footer">
