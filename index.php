@@ -199,12 +199,12 @@
     <?php
 session_start(); // Démarrer la session
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer l'adresse e-mail de l'expéditeur
     $email = $_POST['email'];
 
     // Vérifier si l'adresse e-mail a déjà été utilisée pour l'envoi
-    if(isset($_SESSION['sent_emails']) && in_array($email, $_SESSION['sent_emails'])){
+    if (isset($_SESSION['sent_emails']) && in_array($email, $_SESSION['sent_emails'])) {
         $message = "Vous avez déjà envoyé un e-mail. Veuillez attendre un certain temps avant de réessayer.";
     } else {
         // Récupérer les autres données du formulaire
@@ -224,20 +224,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $headers .= "Reply-To: " . $email . "\r\n";
 
         // Envoyer l'e-mail
-        if(mail("vincent.fougere77@gmail.com", $objet, $contenu, $headers)){
+        if (mail("vincent.fougere77@gmail.com", $objet, $contenu, $headers)) {
             // Ajouter l'adresse e-mail à la liste des e-mails envoyés dans la session
             $_SESSION['sent_emails'][] = $email;
             $message = "Votre e-mail a été envoyé avec succès.";
         } else {
             $message = "Une erreur s'est produite lors de l'envoi de l'e-mail. Veuillez réessayer.";
         }
-    }
 
-    // Rediriger vers la page de confirmation avec le message correspondant
-    header("Location: confirmation.php?message=" . urlencode($message));
-    exit();
+        // Rediriger vers la page de confirmation avec le message correspondant
+        header("Location: confirmation.php?message=" . urlencode($message));
+        exit();
+    }
 }
 ?>
+
 
 
     <!-- contact section  -->
