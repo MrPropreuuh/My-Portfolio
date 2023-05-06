@@ -225,9 +225,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         header("Location: erreur.php?message=Une%20erreur%20s'est%20produite%20lors%20de%20l'envoi%20de%20l'e-mail.%20Veuillez%20réessayer.");
         exit();
     }
-    
 }
 ?>
+
 
     <!-- contact section  -->
 
