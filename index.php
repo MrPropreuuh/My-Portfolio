@@ -197,6 +197,8 @@
 
 
     <?php
+session_start();
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Récupérer les données du formulaire
     $nom = $_POST['nom'];
@@ -217,12 +219,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Envoyer l'e-mail
     if(mail("vincent.fougere77@gmail.com", $objet, $contenu, $headers)){
-        // Redirection vers la page de confirmation
-        header("Location: confirmation.php");
+        // Ajouter l'adresse e-mail à la liste des e-mails envoyés dans la session
+        $_SESSION['sent_emails'][] = $email;
+        $message = "Votre e-mail a été envoyé avec succès.";
+
+        // Redirection vers la page de confirmation avec un message de confirmation
+        header("Location: confirmation.php?message=" . urlencode($message));
         exit();
     } else {
-        // Redirection vers la page d'erreur
-        header("Location: erreur.php");
+        $message = "Une erreur s'est produite lors de l'envoi de l'e-mail. Veuillez réessayer.";
+
+        // Redirection vers la page d'erreur avec un message d'erreur
+        header("Location: erreur.php?message=" . urlencode($message));
         exit();
     }
 }
