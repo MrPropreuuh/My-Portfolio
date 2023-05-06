@@ -85,6 +85,7 @@
         </div>
 
     </section>
+    
 
     <!-- about section -->
     <section class="about" id="about">
@@ -243,10 +244,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <!-- loader  -->
 <div class="loader-wrapp">
-<div class="loader"></div>
+    <div class="loader"></div>
 </div>
 
-    <!-- footer  -->
+<!-- footer  -->
 <footer class="footer">
     <div class="footer-text">
         <p>Droits d'auteur &copy; 2023 par Vincent Fougère | Tous droits réservés.</p>
@@ -258,12 +259,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </a>
     </div>
 </footer>
-    <!-- scrool reveal  -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <!-- typed js  -->
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <!-- js  -->
-    <script src="js.js"></script>
+
+<!-- jquerry  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- hide loader -->
+<script>
+    $(window).on("load", function(){
+      $(".loader-wrapp").fadeOut("slow");
+    });
+</script>
+
+<!-- scrool reveal  -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<!-- typed js  -->
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<!-- js  -->
+<script src="js.js"></script>
+
 </body>
+
+
 
 </html>

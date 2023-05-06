@@ -1118,10 +1118,14 @@ input:focus, textarea:focus {
 
 
   .loader-wrapp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    z-index: 99999;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--background-color);
+    background: var(--background-color);
   }

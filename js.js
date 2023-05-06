@@ -1,3 +1,6 @@
+// Loader hide 
+
+
 const lis = document.querySelectorAll('ul li');
 
 lis.forEach((li, index) => {
@@ -193,4 +196,6 @@ document.addEventListener('click', function(event) {
     });
   }
 });
+
+
 
