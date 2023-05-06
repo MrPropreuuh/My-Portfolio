@@ -197,6 +197,7 @@
 
 
     <?php
+// Appel à session_start() avant tout contenu ou en-tête
 session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
