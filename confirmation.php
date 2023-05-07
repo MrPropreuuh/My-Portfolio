@@ -6,13 +6,6 @@ if (isset($_GET['message'])) {
         $messageText = "Votre message a été envoyé avec succès !";
     } elseif ($message == 'failed') {
         $messageText = "Échec de l'envoi du message. Veuillez réessayer.";
-    } elseif ($message == 'wait') {
-        if (isset($_GET['time_to_wait'])) {
-            $timeToWait = $_GET['time_to_wait'];
-            $messageText = "Veuillez attendre $timeToWait secondes avant d'envoyer un nouveau message.";
-        } else {
-            $messageText = "Veuillez attendre un moment avant d'envoyer un nouveau message.";
-        }
     } else {
         $messageText = "Une erreur s'est produite lors de l'envoi du message.";
     }

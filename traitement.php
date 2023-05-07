@@ -27,12 +27,13 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
     $success = mail($to, $subject, $content, $headers);
 
     if ($success) {
-        // Rediriger vers la page de confirmation
-        header("Location: confirmation.php");
+        // Rediriger vers la page de confirmation avec le message de succès
+        header("Location: confirmation.php?message=success");
         exit();
     } else {
-        // Gérer l'échec de l'envoi de l'e-mail
-        echo "Échec de l'envoi de l'e-mail.";
+        // Rediriger vers la page de confirmation avec le message d'échec
+        header("Location: confirmation.php?message=failed");
+        exit();
     }
 }
 ?>
