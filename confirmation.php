@@ -16,21 +16,24 @@ if (isset($_GET['message'])) {
 
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Confirmation de l'envoi du message</title>
-    <style>
-        /* Ajoutez votre CSS personnalisé ici */
-        /* Par exemple, pour styliser le message, vous pouvez utiliser la classe "message" */
-        .message {
-            color: #333;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-    </style>
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h2>Confirmation de l'envoi du message</h2>
-    <div class="message"><?php echo $messageText; ?></div>
-    <!-- Ajoutez d'autres éléments HTML si nécessaire -->
+    <section class="no-pad">
+    <div class="confirmation-grid">
+    <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_R09JykuodG.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;" autoplay></lottie-player>
+        <h2>Confirmation de l'envoi du message</h2>
+        <div class="message">
+            <p><?php echo $messageText; ?></p>
+        </div>
+        <!-- Ajoutez d'autres éléments HTML si nécessaire -->
+    </div>
+    </section>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
+
 </html>

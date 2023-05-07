@@ -1129,3 +1129,27 @@ input:focus, textarea:focus {
     left: 0;
     background: var(--background-color);
   }
+
+
+  .confirmation-grid {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .message p {
+    color: #00FF7F;
+  }
+
+  .no-pad {
+    padding: 0;
+  }
+
+  .animation-container > path {
+    fill: rgb(255, 0, 0);
+}
