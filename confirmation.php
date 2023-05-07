@@ -25,6 +25,7 @@ if (isset($_GET['message'])) {
 <body>
     <section class="no-pad">
     <div class="confirmation-grid">
+    <lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_x3f1anyl.json"  background="transparent"  speed="1"  style="width: 150px; height: 150px;" autoplay></lottie-player>
     <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_R09JykuodG.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;" autoplay></lottie-player>
         <h2>Confirmation de l'envoi du message</h2>
         <div class="message">
