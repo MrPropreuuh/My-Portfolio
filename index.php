@@ -197,46 +197,45 @@
 
 
     <?php
-session_start();
-ob_start(); // Activation de la mise en tampon de sortie
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer les données du formulaire
-    $nom = $_POST['nom'];
-    $email = $_POST['email'];
-    $numero = $_POST['numero'];
-    $objet = $_POST['objet'];
-    $message = $_POST['message'];
+    $nom = $_POST["nom"];
+    $email = $_POST["email"];
+    $numero = $_POST["numero"];
+    $objet = $_POST["objet"];
+    $message = $_POST["message"];
 
-    // Construction du contenu du mail
-    $contenu = "Nom : " . $nom . "\n";
-    $contenu .= "Email : " . $email . "\n";
-    $contenu .= "Numéro de téléphone : " . $numero . "\n\n";
-    $contenu .= "Message : \n" . $message;
+    // Définir l'adresse e-mail du destinataire
+    $to = "vincent.fougere77@gmail.com";
 
-    // En-têtes du mail
-    $headers = "From: " . $email . "\r\n";
-    $headers .= "Reply-To: " . $email . "\r\n";
+    // Définir le sujet de l'e-mail
+    $subject = "Message depuis le formulaire de contact";
+
+    // Définir le contenu de l'e-mail
+    $content = "Nom : $nom\n";
+    $content .= "Email : $email\n";
+    $content .= "Numéro de téléphone : $numero\n";
+    $content .= "Objet : $objet\n";
+    $content .= "Message : $message\n";
+
+    // Définir les en-têtes supplémentaires
+    $headers = "From: $email" . "\r\n";
 
     // Envoyer l'e-mail
-    if (mail("vincent.fougere77@gmail.com", $objet, $contenu, $headers)) {
-        // Ajouter l'adresse e-mail à la liste des e-mails envoyés dans la session
-        $_SESSION['sent_emails'][] = $email;
-        $message = "Votre e-mail a été envoyé avec succès.";
+    $success = mail($to, $subject, $content, $headers);
 
-        // Redirection vers la page de confirmation avec un message de confirmation
-        header("Location: confirmation.php?message=" . urlencode($message));
+    if ($success) {
+        // Rediriger vers la page de confirmation
+        header("Location: confirmation.php");
         exit();
     } else {
-        $message = "Une erreur s'est produite lors de l'envoi de l'e-mail. Veuillez réessayer.";
+        // Gérer l'échec de l'envoi de l'e-mail
+        echo "Échec de l'envoi de l'e-mail.";
+    }
+}
+?>
 
-        // Redirection vers la page d'erreur avec un message d'erreur
-        header("Location: erreur.php?message=" . urlencode($message));
-    exit();
-    }
-    }
-    ob_end_flush(); // Envoi du contenu mis en tampon
- ?>
+
 
 
     <!-- contact section  -->
@@ -291,7 +290,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 <!-- js  -->
 <script src="js.js"></script>
-
+<script src="fiveserver.config.js"></script>
 </body>
 
 
