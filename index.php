@@ -194,8 +194,6 @@
             </li>
         </ul>
     </section>
-
-
     <?php
 if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer les données du formulaire
@@ -234,9 +232,6 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
-
-
 
     <!-- contact section  -->
 
