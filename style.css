@@ -12,7 +12,7 @@ html {
 *{
     box-sizing: border-box;
     scroll-behavior: smooth;
-    /* outline: 3px solid limegreen !important; */
+     /* outline: 3px solid limegreen !important; */
 }
 
 body{
@@ -481,20 +481,145 @@ transition: opacity 800ms ease,
     align-items: start
 }
 
+
 /* Ajoutez la classe "hidden" pour cacher la carte par défaut */
 .back-card.hidden {
     display: none;/* Rend l'élément invisible */
     opacity: 0;
     transform: translateY(50px); /* Décale l'élément vers le bas de 50px */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Ajoute une transition pour l'opacité et la transformation */
-  }
-  
-  .back-card.show {
-    display: flex;
-    opacity: 1; /* Rend l'élément visible */
-    transform: translateY(0); /* Rétablit la position normale de l'élément */
+    transition: opacity 1s ease, transform 0.5s ease; /* Ajoute une transition pour l'opacité et la transformation */
   }
 
+  .third-card.hidden {
+    display: none;/* Rend l'élément invisible */
+    opacity: 0;
+    transform: translateY(50px); /* Décale l'élément vers le bas de 50px */
+    transition: opacity 1s ease, transform 0.5s ease; /* Ajoute une transition pour l'opacité et la transformation */
+  }
+  .third-card.show {
+    animation: animationUp 2s ease;
+    gap: 2rem;
+    display: flex;
+    flex-wrap: no-wrap;
+}
+
+.third-card > div > .section-heading > h2 {
+    font-size: 1.75rem;
+    text-align: left;
+}
+.third-card > div > .section-heading > p{
+    margin-top: .8rem;
+}
+
+  .third-card > div > h2{
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .back-card.show {
+    display: flex;
+    animation: showAnimation 2s ease;
+  }
+
+  .separator {
+    width: 1px;
+    background-color: var(--main-color);
+    margin: 0 10px;
+    box-shadow: 0  0 5px var(--main-color);
+}
+  .container-left{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    width: 200%;
+  }
+  .container-left > .btn {
+    margin-left: auto;
+    margin-right: 100px;
+  }
+
+  .blog-dropdown {
+    margin-top: 10px;
+  }
+  .dropdown-btn  i {
+    color: #00FF7F;
+  }
+  
+  .blog-dropdown.active .dropdown-content {
+    max-height: 200px; /* Ajustez la valeur en fonction de vos besoins */
+  }
+  .dropdown-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    background-color: var(--second-background-color);
+    border: 1px solid #555555 !important;
+    color: #fff;
+    font-size: 1.1rem;
+    border: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+  }
+
+  .dropdown-content {
+    overflow: hidden;
+    transition: max-height 1s ease; 
+    display: none;
+    border: 1px solid #555555 !important;
+    font-size: .9rem;
+    background-color: var(--second-background-color);
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .blog-dropdown.active .dropdown-content {
+    display: block;
+  } 
+
+  .container-right{
+    width: 100%;
+    padding-right: 2rem;
+  }
+
+  .third-card > div > p {
+    font-size: 1.2rem;
+  }
+  .about.third {
+    align-items : flex-start;
+    /* min-height: 100vh;    */
+  }
+
+  section#about.about.third {
+    min-height: 100vh;
+    padding: 8rem 7% 2rem;
+}
+
+
+  @keyframes animationUp {
+    0% {
+        opacity: 0; /* L'élément est complètement transparent */
+        transform: translateY(-50px); /* Décale l'élément vers le bas de 50px */
+      }
+      100% {
+        opacity: 1; /* L'élément est complètement visible */
+        transform: translateY(0); /* Rétablit la position normale de l'élément */
+      }
+  }
+  @keyframes showAnimation {
+    0% {
+      opacity: 0; /* L'élément est complètement transparent */
+      transform: translateY(50px); /* Décale l'élément vers le bas de 50px */
+    }
+    100% {
+      opacity: 1; /* L'élément est complètement visible */
+      transform: translateY(0); /* Rétablit la position normale de l'élément */
+    }
+  }
+  
 .back-card {
     display: flex;
     justify-content: center;

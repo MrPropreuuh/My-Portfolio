@@ -77,7 +77,6 @@ ScrollReveal({
   duration: 1700,
   delay: 200
 });
-ScrollReveal().reveal('.home-content:not(.home .home-content)');
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 ScrollReveal().reveal('.home-img, .services-container, .contact form', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img, ul', { origin: 'left' });
@@ -86,6 +85,7 @@ ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 ScrollReveal().clean('.back-card .about-content');
 ScrollReveal().clean('.back-card .about-img');
 ScrollReveal().clean('.back-card .about-content .heading');
+ScrollReveal().clean('.third-card .heading');
 
 // typed js 
 const typed = new Typed('.multiple-text', {
@@ -217,3 +217,64 @@ function toggleCards(event) {
     backCard.classList.remove("force-redraw");
   }, 0);
 }
+
+function toggleThirdCard(event) {
+  event.preventDefault();
+  var backCard = document.getElementById("back-card");
+  var thirdCard = document.getElementById("third-card");
+  var about = document.getElementById("about");
+
+  backCard.classList.remove("show");
+  backCard.classList.add("hidden");
+  thirdCard.classList.remove("hidden");
+  thirdCard.classList.add("show");
+  about.classList.add("third");
+
+  // Ajoutez et supprimez une classe temporaire pour forcer le redessin du navigateur
+  thirdCard.classList.add("force-redraw");
+
+  // Utilisez setTimeout pour attendre que le redessin se produise avant de supprimer la classe temporaire
+  setTimeout(function() {
+    thirdCard.classList.remove("force-redraw");
+  }, 0);
+}
+
+
+// dropdown-menu 
+document.addEventListener('DOMContentLoaded', function() {
+  var dropdownButtons = document.querySelectorAll('.blog-dropdown .dropdown-btn');
+
+  dropdownButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      var dropdownContent = this.nextElementSibling;
+      var icon = this.querySelector('i');
+
+      // Vérifier si le menu est déjà ouvert
+      if (dropdownContent.style.display === 'block') {
+        dropdownContent.style.display = 'none';
+        icon.classList.remove('fa-minus');
+        icon.classList.add('fa-chevron-down');
+      } else {
+        closeAllDropdowns();
+        dropdownContent.style.display = 'block';
+        icon.classList.remove('fa-chevron-down');
+        icon.classList.add('fa-minus');
+      }
+    });
+  });
+
+  function closeAllDropdowns() {
+    var dropdownContents = document.querySelectorAll('.blog-dropdown .dropdown-content');
+    var icons = document.querySelectorAll('.blog-dropdown .dropdown-btn i');
+
+    dropdownContents.forEach(function(content) {
+      content.style.display = 'none';
+    });
+
+    icons.forEach(function(icon) {
+      icon.classList.remove('fa-minus');
+      icon.classList.add('fa-chevron-down');
+    });
+  }
+});
+  
