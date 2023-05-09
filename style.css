@@ -27,6 +27,7 @@ html {
 img[alt="www.000webhost.com"]{
     display: none;
 }
+
 nav{
     display: flex;
     position: fixed;
@@ -378,7 +379,7 @@ transition: opacity 800ms ease,
     opacity: 0;
 }
 
-.button button{
+.button a{
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -397,11 +398,11 @@ transition: opacity 800ms ease,
     transition-delay: 0.25s;
 
 }
-.button button i{
+.button a i{
     font-size: 36px;
 }
 
-.button button span{
+.button a span{
     font-size: 14px;
     font-weight: 600;
     transition: 0.5s ease-in-out;
@@ -429,7 +430,7 @@ transition: opacity 800ms ease,
     box-shadow: 0 0 10px var(--color), 0 0 30px var(--color);
 }
 
-.button:hover button{
+.button:hover a{
     color: var(--color);
 }
 
@@ -468,6 +469,42 @@ transition: opacity 800ms ease,
     gap: 2rem;
     background: var(--second-background-color);
 }
+.front-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: var(--second-background-color);
+}
+
+#back-card {
+    align-items: start
+}
+
+/* Ajoutez la classe "hidden" pour cacher la carte par défaut */
+.back-card.hidden {
+    display: none;/* Rend l'élément invisible */
+    opacity: 0;
+    transform: translateY(50px); /* Décale l'élément vers le bas de 50px */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Ajoute une transition pour l'opacité et la transformation */
+  }
+  
+  .back-card.show {
+    display: flex;
+    opacity: 1; /* Rend l'élément visible */
+    transform: translateY(0); /* Rétablit la position normale de l'élément */
+  }
+
+.back-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 2rem;
+    background: var(--second-background-color);
+    opacity: 100%;
+}
+
 
 .about-img img {
     width: 35vw;
@@ -1009,6 +1046,7 @@ input:focus, textarea:focus {
     .about img {
         width: 70vw;
         margin-top: 4rem;
+        z-index: 999;
     }
     html {
         font-size: 100%;

@@ -16,7 +16,7 @@
     <nav>
         <div id="nav-logo-section" class="nav-section">
             <a href="#" class="menu-btn">Portfolio </a>
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
+            <i class="fa-solid fa-bars" id="menu-icon"></i>
         </div>
 
         <div id="nav-contact-section" class="nav-section">
@@ -36,72 +36,94 @@
             <h3>Salut, c'est moi</h3>
             <h1>Vincent Fougère</h1>
             <h3>Et je suis un <span class="multiple-text"></span></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis sem in lacus placerat venenatis eget
-                id
-                libero.</p>
+            <p>Ici, vous trouverez un aperçu de mon parcours, de mes réalisations et de mes compétences. Explorez mes
+                projets, mes expériences et mes centres d'intérêt pour en apprendre davantage sur mon profil.</p>
             <div class="container">
                 <div class="bar"></div>
                 <div class="button-container">
                     <div class="button" style="--color: #00FF7F">
                         <div class="dot"></div>
                         <div class="light"></div>
-                        <button>
+                        <a href="https://www.linkedin.com/in/vincent-foug%C3%A8re-949059271" target="_blank">
                             <i class="fa-brands fa-linkedin-in"></i>
                             <span class="social-neon">LinkedIn</span>
-                        </button>
+                        </a>
                     </div>
                     <div class="button" style="--color: #00FF7F">
                         <div class="dot"></div>
                         <div class="light"></div>
-                        <button>
+                        <a href="
+                        https://discordapp.com/users/Hayne#1334" target="_blank">
                             <i class="fa-brands fa-discord"></i>
                             <span class="social-neon">Discord</span>
-                        </button>
+                        </a>
                     </div>
                     <div class="button" style="--color: #00FF7F">
                         <div class="dot"></div>
                         <div class="light"></div>
-                        <button>
+                        <a href="https://www.facebook.com/profile.php?id=100092328290491" target="_blank">
                             <i class="fa-brands fa-facebook"></i>
                             <span class="social-neon">Facebook</span>
-                        </button>
+                        </a>
                     </div>
 
                 </div>
-                
+
 
             </div>
             <div class="social-media">
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#"><i class="fa-brands fa-discord"></i></a>
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/vincent-foug%C3%A8re-949059271" target="_blank"><i
+                        class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://discordapp.com/users/Hayne#1334" target="_blank"><i
+                        class="fa-brands fa-discord"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100092328290491" target="_blank"><i
+                        class="fa-brands fa-facebook"></i></a>
             </div>
-            <a href="#" class="btn">Télécharger le CV</a>
+            <a href="images/Vincent_Fougere_CV.pdf" class="btn download-btn" download>Télécharger le CV</a>
+
 
         </div>
 
         <div class="home-img">
-            <img src="images/boxed-water-is-better-Tu1AchSx2Hc-unsplash.jpg" alt="">
+            <img src="images/photo vc.png" alt="">
         </div>
 
     </section>
-    
+
 
     <!-- about section -->
     <section class="about" id="about">
-        <div class="about-img">
-            <img src="images/boxed-water-is-better-Tu1AchSx2Hc-unsplash.jpg" alt="">
+        <div class="front-card" id="front-card">
+            <div class="about-img">
+                <img src="images/photo vc.png" alt="">
+            </div>
+            <div class="about-content">
+                <h2 class="heading">A propos de <span>Moi</span></h2>
+                <h3>Étudiant à l'EPSI</h3>
+                <p>Découvrez mon parcours  dans le développement de sites web et d'applications ! Passionné par
+                    les
+                    langages tels que le HTML, le CSS, le JavaScript, le PHP et le MySQL, j'ai réalisé divers projets.
+                </p>
+                <a href="#" class="btn" onclick="toggleCards(event)">Lire plus</a>
+            </div>
         </div>
-        <div class="about-content">
-            <h2 class="heading">A propos de <span>Moi</span></h2>
-            <h3>Étudiant à l'EPSI</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum ullam eius eveniet impedit? Tempora,
-                laudantium eos. Unde modi inventore voluptatum error magni nisi iure perferendis, quae debitis sapiente
-                sequi repellendus delectus in adipisci. Dolores alias quasi nostrum inventore, totam, aspernatur
-                delectus, ex mollitia sit ad officiis.</p>
-            <a href="#" class="btn">Lire plus</a>
+        <div class="back-card hidden" id="back-card">
+            <div class="about-img">
+                <img src="images/photo vc.png" alt="">
+            </div>
+            <div class="about-content" id="content-container">
+                <h2 class="heading">A propos de <span>Moi</span></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum asperiores minima magnam veniam
+                    delectus in!
+                    Sunt totam quasi veritatis accusamus deserunt maiores maxime esse facilis eius blanditiis obcaecati,
+                    qui
+                    officia molestiae laborum magnam natus eos ducimus minus nulla ratione! Nobis vero atque quod nihil
+                    quaerat!</p>
+            </div>
         </div>
     </section>
+
+
 
     <!-- services section design  -->
     <section class="services" id="services">
@@ -157,7 +179,7 @@
                 <span class="icon">
                     <i class="fa-brands fa-html5 rotate"></i>
                 </span>
-                
+
                 <span class="number">90</span>
             </li>
             <li style="--color: #2196F3">
@@ -194,60 +216,62 @@
             </li>
         </ul>
     </section>
-    
+
     <!-- contact section  -->
 
     <section class="contact" id="contact">
-    <h2 class="heading">Contactez <span>Moi!</span></h2>
-    <form method="POST" action="traitement.php">
-        <div class="input-box">
-            <input type="text" name="nom" placeholder="Nom Complet">
-            <input type="email" name="email" placeholder="Email">
-        </div>
-        <div class="input-box">
-            <input type="number" name="numero" placeholder="Mobile Number">
-            <input type="text" name="objet" placeholder="Objet du courriel">
-        </div>
-        <textarea name="message" cols="30" rows="10" placeholder="Votre Message"></textarea>
-        <input type="submit" value="Envoyer" class="btn">
-    </form>
-</section>
+        <h2 class="heading">Contactez <span>Moi!</span></h2>
+        <form method="POST" action="traitement.php">
+            <div class="input-box">
+                <input type="text" name="nom" placeholder="Nom Complet">
+                <input type="email" name="email" placeholder="Email">
+            </div>
+            <div class="input-box">
+                <input type="number" name="numero" placeholder="Mobile Number">
+                <input type="text" name="objet" placeholder="Objet du courriel">
+            </div>
+            <textarea name="message" cols="30" rows="10" placeholder="Votre Message"></textarea>
+            <input type="submit" value="Envoyer" class="btn">
+        </form>
+    </section>
 
-<!-- loader  -->
-<div class="loader-wrapp">
-    <div class="loader"></div>
-</div>
-
-<!-- footer  -->
-<footer class="footer">
-    <div class="footer-text">
-        <p>Droits d'auteur &copy; 2023 par Vincent Fougère | Tous droits réservés.</p>
+    <!-- loader  -->
+    <div class="loader-wrapp">
+        <div class="loader"></div>
     </div>
-    
-    <div class="footer-iconTop">
-        <a href="#home">
-            <i class="fa-sharp fa-solid fa-arrow-up"></i>
-        </a>
-    </div>
-</footer>
 
-<!-- jquerry  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- footer  -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Droits d'auteur &copy; 2023 par Vincent Fougère | Tous droits réservés.</p>
+        </div>
 
-<!-- hide loader -->
-<script>
-    $(window).on("load", function(){
-      $(".loader-wrapp").fadeOut("slow");
-    });
-</script>
+        <div class="footer-iconTop">
+            <a href="#home">
+                <i class="fa-sharp fa-solid fa-arrow-up"></i>
+            </a>
+        </div>
+    </footer>
 
-<!-- scrool reveal  -->
-<script src="https://unpkg.com/scrollreveal"></script>
-<!-- typed js  -->
-<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-<!-- js  -->
-<script src="js.js"></script>
-<script src="fiveserver.config.js"></script>
+    <!-- jquerry  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- hide loader -->
+    <script>
+        $(window).on("load", function () {
+            $(".loader-wrapp").fadeOut("slow");
+        });
+    </script>
+
+    <!-- scrool reveal  -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- typed js  -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!-- js  -->
+    <script src="js.js"></script>
+    <script src="fiveserver.config.js"></script>
 </body>
 
 

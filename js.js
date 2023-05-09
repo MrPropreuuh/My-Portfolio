@@ -73,17 +73,19 @@ window.onscroll = () => {
 
 // scroll reaveal animation 
 ScrollReveal({
-  
   distance: '80px',
   duration: 1700,
   delay: 200
 });
-
+ScrollReveal().reveal('.home-content:not(.home .home-content)');
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 ScrollReveal().reveal('.home-img, .services-container, .contact form', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img, ul', { origin: 'left' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
+ScrollReveal().clean('.back-card .about-content');
+ScrollReveal().clean('.back-card .about-img');
+ScrollReveal().clean('.back-card .about-content .heading');
 
 // typed js 
 const typed = new Typed('.multiple-text', {
@@ -197,5 +199,21 @@ document.addEventListener('click', function(event) {
   }
 });
 
+function toggleCards(event) {
+  event.preventDefault();
 
+  var frontCard = document.getElementById("front-card");
+  var backCard = document.getElementById("back-card");
 
+  frontCard.style.display = "none";
+  backCard.classList.remove("hidden");
+  backCard.classList.add("show"); // Ajoute la classe "show" pour appliquer les animations personnalisées
+
+  // Ajoutez et supprimez une classe temporaire pour forcer le redessin du navigateur
+  backCard.classList.add("force-redraw");
+
+  // Utilisez setTimeout pour attendre que le redessin se produise avant de supprimer la classe temporaire
+  setTimeout(function() {
+    backCard.classList.remove("force-redraw");
+  }, 0);
+}
