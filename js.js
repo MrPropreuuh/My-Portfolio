@@ -1,3 +1,5 @@
+globalCard = null
+
 // Loader hide 
 
 
@@ -51,7 +53,7 @@ window.onscroll = () => {
     let offset = sec.offsetTop - 150;
     let height = sec.offsetHeight;
     let id = sec.getAttribute('id');
-    if(top >= offset && top < offset + height) {
+    if (top >= offset && top < offset + height) {
       navLinks.forEach(links => {
         links.classList.remove('active')
         document.querySelector('body nav a[href*=' + id + ']').classList.add('active')
@@ -99,15 +101,16 @@ const typed = new Typed('.multiple-text', {
 
 // Sélectionnez toutes les cartes
 const cards = document.querySelectorAll('.services-box');
+const container = document.querySelector('.services-container');
 
 // Ajoutez un écouteur d'événement à chaque carte
-cards.forEach(function(card) {
-  card.addEventListener('click', function(event) {
+cards.forEach(function (card) {
+  card.addEventListener('click', function (event) {
     // Récupérez l'ID de la carte cliquée
     const clickedCardId = card.getAttribute('id');
 
     // Supprimez toutes les classes d'animation des cartes
-    cards.forEach(function(card) {
+    cards.forEach(function (card) {
       card.classList.remove(
         'animation-services-box1',
         'animation-services-box2',
@@ -127,57 +130,151 @@ cards.forEach(function(card) {
       );
     });
 
+    // Supprimez toutes les classes uniques du conteneur
+    container.classList.remove(
+      'unique-class-1',
+      'unique-class-2',
+      'unique-class-3',
+      'unique-class-4'
+    );
+
     // Effectuez les actions en fonction de l'ID de la carte cliquée
     switch (clickedCardId) {
       case '1':
+        globalCard = [card, clickedCardId]
         // Ajoutez les classes d'animation à la carte 1
         card.classList.add('animation-services-box1');
+        container.classList.add('unique-class-1');
         document.getElementById('2').classList.add('animation-services-box2');
         document.getElementById('3').classList.add('animation-services-box3');
         document.getElementById('4').classList.add('animation-services-box4');
+
+        // Sélectionnez l'élément avec l'id "1"
+        const element1 = document.getElementById('1');
+
+        // Créez un nouvel élément d'image
+        const image = document.createElement('img');
+        image.src = 'images/00001-1586320219.png'; // Chemin de l'image
+
+        // Remplacez l'icône par l'image
+        const icon = element1.querySelector('.fa-solid.fa-code');
+        icon.parentNode.replaceChild(image, icon);
+
+        // Modifier le texte des éléments <h3> et <p>
+        const titreElement = element1.querySelector('h3');
+        titreElement.textContent = 'Site de ticketing';
+
+        const contenuElement = element1.querySelector('p');
+        contenuElement.textContent = 'Le site de ticketing a été conçu en HTML, CSS, PHP et MySQL, qui offre aux techniciens la possibilité de visualiser et résoudre les problèmes situés dans les salles grâce à un système de tickets mis à la disposition des élèves.';
+
         break;
+
+
 
       case '2':
         // Ajoutez les classes d'animation à la carte 2
         card.classList.add('animation-services-box5');
+        container.classList.add('unique-class-2');
         document.getElementById('1').classList.add('animation-services-box6');
         document.getElementById('3').classList.add('animation-services-box7');
         document.getElementById('4').classList.add('animation-services-box8');
+
+        // Sélectionnez l'élément avec l'id "2"
+        const element2 = document.getElementById('2');
+
+        // Créez un nouvel élément d'image
+        const image2 = document.createElement('img');
+        image2.src = 'images/00004-1583120935.png'; // Chemin de l'image
+
+        // Remplacez l'icône par l'image
+        const icon2 = element2.querySelector('.fa-solid.fa-code');
+        icon2.parentNode.replaceChild(image2, icon2);
+
+        // Modifier le texte des éléments <h3> et <p>
+        const titreElement2 = element2.querySelector('h3');
+        titreElement2.textContent = 'Stage 1er année';
+
+        const contenuElement2 = element2.querySelector('p');
+        contenuElement2.textContent = "Le site administratif de judo développé en HTML, CSS, JS et PHP permet de facilité l'organisation du travail de l'administration de l'association de judo, offrant des fonctionnalités essentielles pour une gestion efficace.";
+
         break;
+
 
       case '3':
         // Ajoutez les classes d'animation à la carte 3
         card.classList.add('animation-services-box9');
+        container.classList.add('unique-class-3');
         document.getElementById('1').classList.add('animation-services-box10');
         document.getElementById('2').classList.add('animation-services-box11');
         document.getElementById('4').classList.add('animation-services-box12');
+        // Sélectionnez l'élément avec l'id "3"
+        const element3 = document.getElementById('3');
+
+        // Créez un nouvel élément d'image
+        const image3 = document.createElement('img');
+        image3.src = 'images/00005-1219564920.png'; // Chemin de l'image pour la carte 3
+
+        // Remplacez l'icône par l'image
+        const icon3 = element3.querySelector('.fa-solid.fa-code');
+        icon3.parentNode.replaceChild(image3, icon3);
+
+        // Modifier le texte des éléments <h3> et <p>
+        const titreElement3 = element3.querySelector('h3');
+        titreElement3.textContent = 'Stage 2eme année';
+
+        const contenuElement3 = element3.querySelector('p');
+        contenuElement3.textContent = "J'ai réalisé un site complet d'assurance sur WordPress, en développant des plugins en PHP spécifiquement conçus pour WordPress. Ces plugins permettent de gérer les devis et de traiter les demandes des clients de manière efficace.";
+
         break;
 
       case '4':
         // Ajoutez les classes d'animation à la carte 4
         card.classList.add('animation-services-box13');
+        container.classList.add('unique-class-4');
         document.getElementById('1').classList.add('animation-services-box14');
         document.getElementById('2').classList.add('animation-services-box15');
         document.getElementById('3').classList.add('animation-services-box15');
+
+        // Sélectionnez l'élément avec l'id "4"
+        const element4 = document.getElementById('4');
+
+        // Créez un nouvel élément d'image
+        const image4 = document.createElement('img');
+        image4.src = 'images/00006-2147606139.png'; // Chemin de l'image pour la carte 4
+
+        // Remplacez l'icône par l'image
+        const icon4 = element4.querySelector('.fa-solid.fa-code');
+        icon4.parentNode.replaceChild(image4, icon4);
+
+        // Modifier le texte des éléments <h3> et <p>
+        const titreElement4 = element4.querySelector('h3');
+        titreElement4.textContent = 'Portfolio et Site de moto fictif';
+
+        const contenuElement4 = element4.querySelector('p');
+        contenuElement4.textContent = "J'ai réalisé ce site de portfolio en utilisant HTML, CSS, PHP et JavaScript. De plus, dans le cadre de mon parcours, je travaille actuellement sur un site fictif de mise en vente de motos.";
+
         break;
 
       default:
         break;
+
     }
 
     event.stopPropagation(); // Arrêtez la propagation de l'événement pour éviter de déclencher l'écouteur d'événement du document
   });
 });
 
+
 // Ajoutez un écouteur d'événement au document pour supprimer les classes d'animation lorsque vous cliquez en dehors des cartes
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
   const clickedElement = event.target;
   const isInsideCard = clickedElement.closest('.services-box');
-  
+
   // Si vous cliquez à l'extérieur des cartes
   if (!isInsideCard) {
+
     // Supprimez toutes les classes d'animation des cartes
-    cards.forEach(function(card) {
+    cards.forEach(function (card) {
       card.classList.remove(
         'animation-services-box1',
         'animation-services-box2',
@@ -196,8 +293,19 @@ document.addEventListener('click', function(event) {
         'animation-services-box15'
       );
     });
+
+    // Supprimez toutes les classes uniques du conteneur
+    container.classList.remove(
+      'unique-class-1',
+      'unique-class-2',
+      'unique-class-3',
+      'unique-class-4'
+    );
+
   }
+  document.getElementById(globalCard[1]) = globalCard[0];
 });
+// A propos de moi 
 
 function toggleCards(event) {
   event.preventDefault();
@@ -213,7 +321,7 @@ function toggleCards(event) {
   backCard.classList.add("force-redraw");
 
   // Utilisez setTimeout pour attendre que le redessin se produise avant de supprimer la classe temporaire
-  setTimeout(function() {
+  setTimeout(function () {
     backCard.classList.remove("force-redraw");
   }, 0);
 }
@@ -234,18 +342,18 @@ function toggleThirdCard(event) {
   thirdCard.classList.add("force-redraw");
 
   // Utilisez setTimeout pour attendre que le redessin se produise avant de supprimer la classe temporaire
-  setTimeout(function() {
+  setTimeout(function () {
     thirdCard.classList.remove("force-redraw");
   }, 0);
 }
 
 
 // dropdown-menu 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var dropdownButtons = document.querySelectorAll('.blog-dropdown .dropdown-btn');
 
-  dropdownButtons.forEach(function(button) {
-    button.addEventListener('click', function() {
+  dropdownButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
       var dropdownContent = this.nextElementSibling;
       var icon = this.querySelector('i');
 
@@ -267,14 +375,33 @@ document.addEventListener('DOMContentLoaded', function() {
     var dropdownContents = document.querySelectorAll('.blog-dropdown .dropdown-content');
     var icons = document.querySelectorAll('.blog-dropdown .dropdown-btn i');
 
-    dropdownContents.forEach(function(content) {
+    dropdownContents.forEach(function (content) {
       content.style.display = 'none';
     });
 
-    icons.forEach(function(icon) {
+    icons.forEach(function (icon) {
       icon.classList.remove('fa-minus');
       icon.classList.add('fa-chevron-down');
     });
   }
 });
-  
+
+// lock = true;
+
+// function displayPopup(item) {
+//     if (lock) {
+//         lock = false;
+//         parent = item.parentElement;
+//         parent.style.transform = 'scale(1.5)'
+//         parent.style.zIndex = '100'
+//         item.setAttribute('onClick', 'hidePopup(this)')
+//     }
+// }
+
+// function hidePopup(item) {
+//     parent = item.parentElement;
+//     parent.style.transform = 'scale(1)'
+//     parent.style.zIndex = '1'
+//     item.setAttribute('onClick', 'displayPopup(this)')
+//     lock = true;
+// }

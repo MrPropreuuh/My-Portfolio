@@ -497,7 +497,7 @@ transition: opacity 800ms ease,
     transition: opacity 1s ease, transform 0.5s ease; /* Ajoute une transition pour l'opacité et la transformation */
   }
   .third-card.show {
-    animation: animationUp 2s ease;
+    animation: animationUp 1500ms ease;
     gap: 2rem;
     display: flex;
     flex-wrap: no-wrap;
@@ -518,7 +518,7 @@ transition: opacity 800ms ease,
 
   .back-card.show {
     display: flex;
-    animation: showAnimation 2s ease;
+    animation: showAnimation 1500ms ease;
   }
 
   .separator {
@@ -546,7 +546,7 @@ transition: opacity 800ms ease,
   }
   
   .blog-dropdown.active .dropdown-content {
-    max-height: 200px; /* Ajustez la valeur en fonction de vos besoins */
+    max-height: 200px /* Ajustez la valeur en fonction de vos besoins */
   }
   .dropdown-btn {
     display: flex;
@@ -566,16 +566,24 @@ transition: opacity 800ms ease,
   }
 
   .dropdown-content {
-    overflow: hidden;
-    transition: max-height 1s ease; 
+    overflow: hidden; 
     display: none;
     border: 1px solid #555555 !important;
     font-size: .9rem;
     background-color: var(--second-background-color);
     padding: 10px;
     width: 100%;
+    /* animation: dropDown 1s ease; */
+    transition: height 0.3s ease;
+    animation: dropDown 0.3s ease;
   }
+  .dropdown-content p {
+    animation: dropDown 0.3s ease;
+  }
+
+
   
+
   .blog-dropdown.active .dropdown-content {
     display: block;
   } 
@@ -588,10 +596,10 @@ transition: opacity 800ms ease,
   .third-card > div > p {
     font-size: 1.2rem;
   }
-  .about.third {
-    align-items : flex-start;
-    /* min-height: 100vh;    */
-  }
+#btn-unique {
+    margin-left: 0 100%;
+    margin-top: 30px;
+}
 
   section#about.about.third {
     min-height: 100vh;
@@ -672,6 +680,7 @@ transition: opacity 800ms ease,
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
+    transition: all 0.5s ease;
 }
 
 .services-container .services-box {
@@ -681,7 +690,7 @@ transition: opacity 800ms ease,
     border-radius: 2rem;
     text-align: center;
     border: .2rem solid var(--background-color);
-    transition: .5s ease;
+    transition: all .5s ease;
 }
 
 .services-container .services-box:hover{
@@ -935,72 +944,174 @@ input:focus, textarea:focus {
 .container .services-box{
     transition: background-color 10s ease-in-out;
 }
+.unique-class-1 {
+    display: flex;
+    align-items: flex-start;
+    min-height: 60vh;
+    max-height: 60vh;
+}
 
+.unique-class-2 {
+    display: flex;
+    align-items: flex-start;
+    min-height: 60vh;
+    max-height: 60vh;
+}
+
+.unique-class-3 {
+    display: flex;
+    align-items: flex-start;
+    min-height: 60vh;
+    max-height: 60vh;
+}
+
+.unique-class-4 {
+    display: flex;
+    align-items: flex-start;
+    min-height: 60vh;
+    max-height: 60vh;
+}
 .animation-services-box1 {
-    background-color: red !important;
-    align-self: stretch;
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    z-index: 1 !important;
+    margin: 0 auto;
+    padding: 0% !important;
+    overflow: hidden;
+  }
+  .animation-services-box1 h3{
+    margin: 4rem 0 2rem;
 
   }
+  .animation-services-box1 img {
+    height: 14rem;
+    width: 100%;
     
-  .animation-services-box2 {
-    background-color: blue !important;
+    
   }
-  
+  .animation-services-box1 .btn {
+    margin-bottom: 2rem;
+  }
+  .animation-services-box2 {
+    transform: translateX(350%) scale(0.9) !important;
+    z-index: 2 !important;
+  }
+
   .animation-services-box3 {
-    
-    background-color: green !important;
+    transform: translateX(250%) scale(0.9) !important;
+    z-index: 2 !important;
   }
   
   .animation-services-box4 {
-    
-    background-color: yellow !important;
+    transform: translateX(250%) scale(0.9) !important;
+    z-index: 1 !important;;
   }
   
+  
   .animation-services-box5 {
-    background-color: purple !important;
+        position: absolute;
+        height: 100%;
+        width: 80%;
+        z-index: 2 !important;
+        margin: 0 auto;
+        padding: 0% !important;
+        overflow: hidden;
+  }
+  .animation-services-box5 h3{
+    margin: 4rem 0 2rem;
+
+  }
+  .animation-services-box5 img {
+    height: 14rem;
+    width: 100%;
+    
+    
+  }
+  .animation-services-box5 .btn {
+    margin-bottom: 2rem;
   }
   
   .animation-services-box6 {
-    background-color: orange !important;
+    transform: translateX(-150%) scale(0.9) !important;
   }
   
   .animation-services-box7 {
-    background-color: pink !important;
+    transform: translateX(350%) scale(0.9) !important;
   }
   
   .animation-services-box8 {
-    background-color: teal !important;
+    transform: translateX(150%) scale(0.9) !important;
   }
   
   .animation-services-box9 {
-    background-color: brown !important;
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    z-index: 1 !important;
+    margin: 0 auto;
+    padding: 0% !important;
+    overflow: hidden;
   }
-  
+  .animation-services-box9 h3{
+    margin: 4rem 0 2rem;
+
+  }
+  .animation-services-box9 img {
+    height: 14rem;
+    width: 100%;
+    
+    
+  }
+  .animation-services-box9 .btn {
+    margin-bottom: 2rem;
+  }
   .animation-services-box10 {
-    background-color: cyan !important;
+    transform: translateX(350%) scale(0.9) !important;
   }
   
   .animation-services-box11 {
-    background-color: magenta !important;
+    transform: translateX(250%) scale(0.9) !important;
   }
   
   .animation-services-box12 {
-    background-color: gray !important;
+    transform: translateX(450%) scale(0.9) !important;
   }
   
   .animation-services-box13 {
-    background-color: silver !important;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1 !important;
+    margin: 0 auto;
+    padding: 0% !important;
+    overflow: hidden;
   }
-  
+  .animation-services-box13 h3{
+    margin: 4rem 0 2rem;
+
+  }
+  .animation-services-box13 img {
+    height: 14rem;
+    width: 100%;
+    
+    
+  }
+  .animation-services-box13 .btn {
+    margin-bottom: 2rem;
+  }
   .animation-services-box14 {
-    background-color: gold !important;
+    transform: translateX(350%) scale(0.9) !important;
   }
   
   .animation-services-box15 {
-    background-color: lime !important;
+    transform: translateX(250%) scale(0.9) !important;
   }
   
-
+  .menu-dropdown a {
+    color: #00FF7F;
+    text-decoration: underline;
+  }
 /* BREAKPOINT Responsive  */
 
 
